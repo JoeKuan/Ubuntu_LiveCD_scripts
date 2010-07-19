@@ -16,4 +16,6 @@ if [ $BACKUP_BOOTSTRAP -eq 1 ]
 then
   echo "Copying chroot.$RELEASE_NAME.debootstrap to chroot"
   cp -fr chroot.$RELEASE_NAME.debootstrap chroot
+else
+  mv chroot.$RELEASE_NAME.debootstrap chroot
 fi
