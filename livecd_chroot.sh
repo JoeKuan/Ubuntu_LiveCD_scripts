@@ -19,7 +19,7 @@ chroot_inst_pkgs() { run_chroot_script $INST_PKG_SCRIPT; }
 make_all_images() {
   if [ -f "./livecd_chroot.conf" ]
   then
-    . ./livecd_chroot.sh
+    . ./livecd_chroot.conf
   fi
   
   . ./livecd_image.sh
