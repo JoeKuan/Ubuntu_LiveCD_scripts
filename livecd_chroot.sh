@@ -17,8 +17,17 @@ chroot_dist_update() { run_chroot_script $DIST_UPDATE_SCRIPT; }
 chroot_inst_pkgs() { run_chroot_script $INST_PKG_SCRIPT; }
 
 make_all_images() {
-  sh livecd_image.sh
-  sh liveusb_image.sh
+  if [ -f "./livecd_chroot.conf" ]
+  then
+    . ./livecd_chroot.sh
+  fi
+  
+  . ./livecd_image.sh
+
+  if [ "$BUILD_USB_IMAGE" -eq 1 ]
+  then
+   . ./liveusb_image.sh
+  fi
 }
 
 chroot_debootstrap() {
