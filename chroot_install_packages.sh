@@ -7,6 +7,7 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 dpkg-divert --local --rename --add /sbin/initctl
 # For 9.10 issue
 ln -s /bin/true /sbin/initctl
+touch /tmp/initctl_divert
 echo ">>>> Done"
 echo
 
