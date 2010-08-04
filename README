@@ -1,0 +1,17 @@
+--- Quick notes ---
+Build from bootstrap to Live images
+sh livecd_chroot.sh all 
+
+Update chroot with the latest packages and build Live images
+sh livecd_chroot.sh install
+
+If you need to run some specific programs under chroot directory
+sh chroot_mount_install.sh
+chroot chroot
+export HOME=/root
+export LC_ALL=C
+< run commands inside the new chroot ... >
+exit
+sh chroot_umount_install.sh
+
+Edit chroot_install_packages.sh to tailor your LiveCD 
